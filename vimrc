@@ -1,6 +1,7 @@
 " Example Vim configuration.
 " Copy or symlink to ~/.vimrc or ~/_vimrc.
 
+call pathogen#infect() 
 set nocompatible                  " Must come first because it changes other options.
 
 syntax enable                     " Turn on syntax highlighting.
