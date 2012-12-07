@@ -1,6 +1,7 @@
 " Example Vim configuration.
 " Copy or symlink to ~/.vimrc or ~/_vimrc.
 
+
 call pathogen#infect() 
 set nocompatible                  " Must come first because it changes other options.
 
@@ -61,6 +62,8 @@ map <leader>tp :tabprevious<cr>
 map <leader>tf :tabfirst<cr>
 map <leader>tl :tablast<cr>
 map <leader>tm :tabmove
+
+nmap <S-N> :NERDTree<enter>
 
 " Uncomment to use Jamis Buck's file opening plugin
 "map <Leader>t :FuzzyFinderTextMate<Enter>
