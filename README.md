@@ -13,3 +13,4 @@ It uses these plugins:
 - vim-git
 - vim-l9
 - vim-rooter
+- Command-T
