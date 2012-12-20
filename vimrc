@@ -40,6 +40,8 @@ set nobackup                      " Don't make a backup before overwriting a fil
 set nowritebackup                 " And again.
 set directory=$HOME/.vim/tmp//,.  " Keep swap files in one location
 
+"set autochdir                     " Switch working directory to loaded file directory
+
 " UNCOMMENT TO USE
 "set tabstop=2                    " Global tab width.
 "set shiftwidth=2                 " And again, related.
