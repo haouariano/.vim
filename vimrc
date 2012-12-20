@@ -41,6 +41,7 @@ set nowritebackup                 " And again.
 set directory=$HOME/.vim/tmp//,.  " Keep swap files in one location
 
 "set autochdir                     " Switch working directory to loaded file directory
+set mouse=a			  "Enable using mouse in some cases like window-resize
 
 " UNCOMMENT TO USE
 "set tabstop=2                    " Global tab width.
@@ -54,6 +55,8 @@ set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLo
 " Or use vividchalk
 colorscheme topfunky-light
 
+let mapleader = ","
+
 " Tab mappings.
 map <leader>tt :tabnew<cr>
 map <leader>te :tabedit
@@ -64,8 +67,17 @@ map <leader>tp :tabprevious<cr>
 map <leader>tf :tabfirst<cr>
 map <leader>tl :tablast<cr>
 map <leader>tm :tabmove
+"Command-T will fetch new/deleted directory using it piped with CommandTFlush
+"map <Leader>t :CommandT<Enter>
+map <Leader>t :CommandTFlush<Enter>\|:CommandT<Enter>
 
-nmap <S-N> :NERDTree<enter>
+" Use ',,' to switch between 2 last used buffers in the current window
+nnoremap <leader><leader> <C-^>   
+
+"This print and expand the the current buffer directory
+"cnoremap %% <C-R>=expand('%:h').'/'<cr>	
+
+map <leader>n :NERDTree<enter>
 
 " Uncomment to use Jamis Buck's file opening plugin
 "map <Leader>t :FuzzyFinderTextMate<Enter>
