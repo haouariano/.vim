@@ -70,14 +70,28 @@ map <leader>tm :tabmove
 "Command-T will fetch new/deleted directory using it piped with CommandTFlush
 "map <Leader>t :CommandT<Enter>
 map <Leader>t :CommandTFlush<Enter>\|:CommandT<Enter>
+map <leader>n :NERDTree<enter>
+
+ab teh the
+
+vmap < <gv
+vmap > >gv
+
+"\\\\\\\\\\\\\ Ctrl+Space for auto-completion ////////////
+inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
+\ "\<lt>C-n>" :
+\ "\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?" .
+\ "\"\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\" :" .
+\ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
+imap <C-@> <C-Space>
+"\\\\\\\\\\\\\\\\\\\\\\\          /////////////////////////
 
 " Use ',,' to switch between 2 last used buffers in the current window
 nnoremap <leader><leader> <C-^>   
 
 "This print and expand the the current buffer directory
-"cnoremap %% <C-R>=expand('%:h').'/'<cr>	
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
-map <leader>n :NERDTree<enter>
 
 " Uncomment to use Jamis Buck's file opening plugin
 "map <Leader>t :FuzzyFinderTextMate<Enter>
