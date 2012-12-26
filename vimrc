@@ -43,6 +43,9 @@ set directory=$HOME/.vim/tmp//,.  " Keep swap files in one location
 "set autochdir                     " Switch working directory to loaded file directory
 set mouse=a			  "Enable using mouse in some cases like window-resize
 
+set smartindent                   "Indentaion stuff	
+set autoindent                    "Indentaion stuff
+
 " UNCOMMENT TO USE
 "set tabstop=2                    " Global tab width.
 "set shiftwidth=2                 " And again, related.
@@ -73,6 +76,7 @@ map <Leader>t :CommandTFlush<Enter>\|:CommandT<Enter>
 map <leader>n :NERDTree<enter>
 
 ab teh the
+ab Teh The
 
 vmap < <gv
 vmap > >gv
@@ -84,6 +88,12 @@ inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
 \ "\"\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\" :" .
 \ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
 imap <C-@> <C-Space>
+
+"use jj in insert mode to escape Insert mode
+imap jj <esc>		
+nmap <space> :
+nmap <leader>ev :e $MYVIMRC<cr>
+
 "\\\\\\\\\\\\\\\\\\\\\\\          /////////////////////////
 
 " Use ',,' to switch between 2 last used buffers in the current window
@@ -92,6 +102,9 @@ nnoremap <leader><leader> <C-^>
 "This print and expand the the current buffer directory
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
+" Source the vimrc file after saving it. This way, you don't have to reload
+" Vim to see the changes.
+autocmd bufwritepost vimrc source $MYVIMRC
 
 " Uncomment to use Jamis Buck's file opening plugin
 "map <Leader>t :FuzzyFinderTextMate<Enter>
