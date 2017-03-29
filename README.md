@@ -14,3 +14,11 @@ It uses these plugins:
 - vim-l9
 - vim-rooter
 - Command-T
+
+Compiling Command-T:
+
+  cd ~/.vim/bundle/command-t/ruby/command-t
+  ruby extconf.rb
+  make
+
+NOTE: same ruby version for vim must be used & make sure ruby-dev package is installed on your system.
