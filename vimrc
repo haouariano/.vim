@@ -2,7 +2,7 @@
 " Copy or symlink to ~/.vimrc or ~/_vimrc.
 
 
-call pathogen#infect() 
+execute pathogen#infect()
 set nocompatible                  " Must come first because it changes other options.
 
 syntax enable                     " Turn on syntax highlighting.
@@ -56,7 +56,7 @@ set laststatus=2                  " Show the status line all the time
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
 " Or use vividchalk
-colorscheme topfunky-light
+"colorscheme topfunky-light
 
 let mapleader = ","
 
